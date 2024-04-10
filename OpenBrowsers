@@ -1,0 +1,52 @@
+
+import org.openqa.selenium.InvalidArgumentException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.annotations.Test;
+
+            public class OpenGoogle {
+
+
+//                @Test
+//                public void openGoogle() {
+//                   // ChromeDriver driver = new ChromeDriver();
+//                   // FirefoxDriver driver1 = new FirefoxDriver();
+//                    //InternetExplorerDriver driver2 = new InternetExplorerDriver();
+//                }
+
+                                @Test
+                public void OpenGoogle() {
+//                    WebDriver driver1 = new ChromeDriver();
+//                    driver1.get("https://www.google.com");
+//
+//                    WebDriver driver2 = new FirefoxDriver();
+//                    driver2.get("https://www.google.com");
+//
+//                    WebDriver driver3 = new InternetExplorerDriver();
+//                    driver3.get("https://www.google.com");
+
+
+                    WebDriver driver4 = getDriver("Firefox");
+                    WebDriver driver5 = getDriver("Chrome");
+                    WebDriver driver6 = getDriver("ie");
+
+                    }
+                @Test
+                public WebDriver getDriver(String browser) {
+                    switch (browser) {
+                        case "Chrome":
+                            return new ChromeDriver();
+                        case "Firefox":
+                            return new FirefoxDriver();
+                        case "ie":
+                            return new InternetExplorerDriver();
+                        default:
+                            throw new InvalidArgumentException("Nieprawidłowa wartość przeglądarki");
+
+                    }
+
+                }
+            }
+
