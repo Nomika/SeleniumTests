@@ -1,0 +1,19 @@
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class BrowserClose {
+    @Test
+            public void CloseBrowser() {
+    WebDriver driver = new ChromeDriver();
+
+
+       driver.get("https://www.google.com");
+
+    JavascriptExecutor executor = (JavascriptExecutor) driver;
+        executor.executeScript("window.open('https://wp.pl','blank','width=200','height=200')");
+        driver.close();
+       // driver.quit();
+}
+}
