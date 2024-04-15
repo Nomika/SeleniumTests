@@ -1,0 +1,19 @@
+public class TestPierwszy {
+
+    @Test
+    public void PierwszyTest(){
+
+    WebDriver driver = new ChromeDriver();
+    driver.manage().window().maximize();
+    driver.get("https://www.onet.pl");
+
+    //znajdz przycisk
+        WebElement agreeButton =
+                driver.findElement(
+                        By.xpath("//div/div/div/div/button/span[text()='Przejdź do serwisu']"));
+       //kliknij przycisk
+        agreeButton.click();
+        
+
+}
+}
