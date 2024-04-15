@@ -1,0 +1,36 @@
+import net.bytebuddy.asm.Advice;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class TestPierwszy {
+
+    @Test
+    public void PierwszyTest(){
+
+    WebDriver driver = new ChromeDriver();
+    driver.manage().window().maximize();
+    driver.get("https://www.onet.pl");
+
+    //znajdz przycisk
+        WebElement agreeButton =
+                driver.findElement(
+                        By.xpath("//div/div/div/div/button/span[text()='Przejdź do serwisu']"));
+       //kliknij przycisk
+        agreeButton.click();
+        WebElement searchField = driver.findElement(By.name("qt"));
+        searchField.sendKeys("Selenium");
+        searchField.sendKeys(Keys.ENTER);
+
+        WebElement result =
+                driver.findElement(
+                        By.xpath("//a[contains(@href,'selenium.dev')]"));
+
+        Assert.assertTrue(result.isDisplayed());
+
+}
+}
