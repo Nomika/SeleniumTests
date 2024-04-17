@@ -1,0 +1,41 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class TestDrugi {
+
+    @Test
+    public void DrugiTest() {
+
+        WebDriver driver = new ChromeDriver();
+//        driver.get("https://wp.pl/");
+//
+//        WebElement agreeButton = driver.findElement(
+//                By.xpath("//div/div/div/div/div/button[text()='AKCEPTUJĘ I PRZECHODZĘ DO SERWISU']"));
+//        agreeButton.click();
+
+        driver.get("https://ug.edu.pl");
+
+        WebElement agreeButton = driver.findElement(
+                By.xpath("//button[text()='Akceptuj']"));
+       agreeButton.click();
+
+       driver.findElement(By.xpath("//a[text()='Kandydaci']")).click();
+       //agreeButton.click();
+
+        WebElement result = driver.findElement(By.xpath(
+                "//div/ul/li/a[text()='Studia I i II stopnia oraz jednolite magisterskie']"));
+        Assert.assertTrue(result.isDisplayed());
+
+//        driver.get("http://seleniumdemo.com");
+//
+//        WebElement element = driver.findElement(By);
+
+
+    }
+    }
+
+
