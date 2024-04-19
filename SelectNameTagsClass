@@ -1,0 +1,38 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import java.util.List;
+
+public class SelektorTest {
+    @Test
+    public void findElement(){
+        WebDriver znajdz = new ChromeDriver();
+        znajdz.get("https://testeroprogramowania.github.io/selenium/basics.html");
+
+
+//        By buttonId = By.id("clickOnM");
+//        WebElement clickOnMe = znajdz.findElement(buttonId);
+
+//        By inputName = By.name("fname");
+//       // WebElement fName = znajdz.findElement(inputName);
+//        znajdz.findElement(By.name("fname"));
+
+        By ukryty = By.className("topSecret");
+        znajdz.findElement(ukryty);
+
+        By input1 = By.tagName("input");
+        WebElement input = znajdz.findElement(input1);
+        input.sendKeys("Pierwszy");
+
+        List<WebElement> inputs = znajdz.findElements(input1);
+        System.out.println(inputs.size());
+
+
+
+
+
+    }
+}
