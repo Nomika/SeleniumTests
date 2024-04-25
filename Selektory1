@@ -1,0 +1,29 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class CssSelektorTest {
+
+    @Test
+    public void findElements() {
+        WebDriver znajdz = new ChromeDriver();
+        znajdz.get("https://testeroprogramowania.github.io/selenium/basics.html");
+
+//        By cssId = By.cssSelector("#clickOnMe");
+//        znajdz.findElement(cssId);
+
+//        By cssClass = By.cssSelector(".topSecret");
+//        znajdz.findElement(cssClass);
+
+//        By cssTag = By.cssSelector("input");
+//        znajdz.findElement(cssTag).sendKeys("Pierwszy");
+
+//        By cssName = By.cssSelector("[name='fname']");
+//        znajdz.findElement(cssName);
+
+        By cssClass = By.cssSelector("[class='topSecret']");
+        znajdz.findElement(cssClass);
+
+    }
+}
