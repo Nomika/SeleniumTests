@@ -1,0 +1,34 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class xPathSelektor {
+
+    @Test
+    public void xPath(){
+
+        WebDriver xpath = new ChromeDriver();
+        xpath.get("https://testeroprogramowania.github.io/selenium/basics.html");
+
+//        By longpath = By.xpath("/html/body/table/tbody/tr");
+//        xpath.findElement(longpath);
+
+//        By path = By.xpath("//ul");
+//        xpath.findElement(path);
+
+//        By id = By.xpath("//button[@id='clickOnMe']");
+//                WebElement idPath = xpath.findElement(id);
+
+//                By name = By.xpath("//input[@name='fname']");
+//                WebElement namePath = xpath.findElement(name);
+//
+//                By classPath = By.xpath("//p[@class='topSecret']");
+//                WebElement classPath1 = xpath.findElement(classPath);
+
+                By input = By.xpath("//input");
+                WebElement input1 = xpath.findElement(input);
+                input1.sendKeys("Pierwszy");
+    }
+}
