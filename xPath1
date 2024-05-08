@@ -1,0 +1,9 @@
+ By input = By.xpath("//input");
+//                WebElement input1 = xpath.findElement(input);
+//                input1.sendKeys("Pierwszy");
+
+//                By linkText = By.xpath("//a[text()='Visit W3Schools.com!']");
+//                WebElement school = xpath.findElement(linkText);
+
+                By partText = By.xpath("//a[contains(text(), 'W')]");
+                WebElement Part = xpath.findElement(partText);
