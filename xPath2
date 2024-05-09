@@ -1,0 +1,14 @@
+   By allxpath = By.xpath("//*");
+//                xpath.findElement(allxpath);
+
+                By namePath = By.xpath("//*[@name]");
+                xpath.findElement(namePath);
+
+//                By nameOne = By.xpath("//*[@name='fname']");
+//                xpath.findElement(nameOne);
+
+//                By button = By.xpath("(//button[@id])[1]");
+//                xpath.findElement(button);
+//
+//        By button1 = By.xpath("(//button[@id])[last()]");
+//        xpath.findElement(button1);
