@@ -1,0 +1,19 @@
+import org.openqa.selenium.json.JsonInput;
+
+import javax.sound.midi.Soundbank;
+
+public class SubstringTest {
+
+    public static void main(String[] args) {
+        String test = "Konstantynopolitańczykowianeczka";
+        String substring = test.substring(5);
+        System.out.println(substring);
+
+        String test1 = "Konstantynopolitańczykowianeczka";
+        String substring1 = test.substring(test1.length()-5);
+        System.out.println(substring1);
+
+
+    }
+
+}
