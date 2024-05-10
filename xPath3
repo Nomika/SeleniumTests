@@ -1,0 +1,14 @@
+/By equal = By.xpath("//button[@id='clickOnMe']");
+//xpath.findElement(equal);
+//        By equal1 = By.xpath("//*[@id!='clickOnMe']");
+//        xpath.findElement(equal1);
+//        By equal2 = By.xpath("//button[@id='clickOnMe']");
+//        xpath.findElement(equal2);
+//        By cont = By.xpath("//*[contains(@name, 'ame')]");
+//        xpath.findElement(cont);
+
+//        By startWith = By.xpath("//*[starts-with(@name, 'fname')]");
+//        xpath.findElement(startWith);
+
+        By equal = By.xpath("//*[substring(@name,string-length(@name)-string-length('ame')+1)='ame']");
+        xpath.findElement(equal);
