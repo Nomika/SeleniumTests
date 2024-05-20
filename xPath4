@@ -1,0 +1,23 @@
+    By child = By.xpath("//div/child::ul");
+//        xpath.findElement(child);
+
+//        By desc = By.xpath("//div//descendant::*");
+//        xpath.findElement(desc);
+
+//        By ances = By.xpath("//div//ancestor::*");
+//        xpath.findElement(ances);
+
+//        By follow = By.xpath("//div//following::*");
+//        xpath.findElement(follow);
+//
+//        By followSib = By.xpath("//div//following-sibling::*");
+//        xpath.findElement(followSib);
+
+//        By parent = By.xpath("//div/../..");
+//        xpath.findElement(parent);
+
+//        By preced = By.xpath("//div//preceding::*");
+//        xpath.findElement(preced);
+
+        By precedSib = By.xpath("//div//preceding-sibling::*");
+        xpath.findElement(precedSib);
