@@ -1,0 +1,8 @@
+    By dwaTagi = By.xpath("//div | //input");
+//        xpath.findElement(dwaTagi);
+
+//        By dwaTagi = By.xpath("//input[@name='fname' and @id='fname']");
+//        xpath.findElement(dwaTagi);
+
+        By dwaTagi1 = By.xpath("//input[@name='fname' or @id='fname']");
+        xpath.findElement(dwaTagi1);
