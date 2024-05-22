@@ -1,0 +1,47 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class BasicActions {
+
+    @Test
+    public void Actions() {
+
+        WebDriver actions = new ChromeDriver();
+        actions.get("https://testeroprogramowania.github.io/selenium/");
+
+        WebElement basicLink = actions.findElement(By.linkText("Podstawowa strona testowa"));
+        basicLink.click();
+
+//        WebElement secoundLink = actions.findElement(By.id("clickOnMe"));
+//        secoundLink.click();
+
+//          actions.findElement(By.id("clickOnMe")).click();
+
+//        WebElement inputName = actions.findElement(By.name("fname"));
+//        inputName.click();
+
+        WebElement inputName = actions.findElement(By.name("fname"));
+        inputName.sendKeys("Monika");
+
+        WebElement DeleteText = actions.findElement((By.name("username")));
+        DeleteText.clear();
+//       WebElement inputName1 = actions.findElement(By.name("username"));
+//        inputName1.sendKeys("Admin");
+
+        DeleteText.sendKeys("Adminik");
+
+
+
+
+
+
+
+
+    }
+}
+
