@@ -1,0 +1,22 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class CheckBox {
+    @Test
+    public void checkboxActions() {
+
+        WebDriver checkboxik = new ChromeDriver();
+        checkboxik.get("https://testeroprogramowania.github.io/selenium/");
+        WebElement basicLink = checkboxik.findElement(By.linkText("Podstawowa strona testowa"));
+        basicLink.click();
+
+        checkboxik.findElement(By.cssSelector("[type='checkbox']")).click();
+        checkboxik.findElement(By.xpath("//input[@value='male']")).click();
+     ;
+    }
+}
