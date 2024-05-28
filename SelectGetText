@@ -1,0 +1,42 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+import java.util.List;
+
+public class SelectActions {
+    @Test
+    public void SelectGetText() {
+
+        WebDriver selectsOptions = new ChromeDriver();
+        selectsOptions.get("https://testeroprogramowania.github.io/selenium/");
+
+        WebElement basicLink = selectsOptions.findElement(By.linkText("Podstawowa strona testowa"));
+        basicLink.click();
+
+        WebElement opcja = selectsOptions.findElement(By.cssSelector("select"));
+        Select selekcja = new Select(opcja);
+        selekcja.selectByIndex(3);
+        System.out.println(opcja.getText());
+
+        List<WebElement> opcja1 = selekcja.getOptions();
+        for(WebElement opcja2 : opcja1) {
+            System.out.println(opcja2.getText());
+        }
+//        WebElement selectOption = selectsOptions.findElement(By.cssSelector("select"));
+//        Select cars =new Select(selectOption);
+//        cars.selectByIndex(1);
+//        cars.selectByVisibleText("Saab");
+//        cars.selectByValue("volvo");
+
+//        List<WebElement> options = cars.getOptions();
+//        for(WebElement option : options){
+//            System.out.println(option.getText());
+        }
+    }
+
