@@ -1,0 +1,31 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class AlertOpsluga {
+    @Test
+    public void obsluzAlert() {
+
+        WebDriver alertAction = new ChromeDriver();
+        alertAction.get("https://testeroprogramowania.github.io/selenium/");
+
+        WebElement basicLink = alertAction.findElement(By.linkText("Podstawowa strona testowa"));
+        basicLink.click();
+
+        WebElement Wpisz = alertAction.findElement((By.name("username")));
+        Wpisz.clear();
+
+        Wpisz.sendKeys("Marlena");
+        System.out.println(Wpisz.getAttribute("value"));
+        Wpisz.sendKeys(Keys.ENTER);
+
+        Alert first = alertAction.switchTo().alert();
+        first.accept();
+        Alert secound = alertAction.switchTo().alert();
+        secound.accept();
+
+        alertAction.findElement(By.cssSelector("[type='checkbox']"));
+    }
+}
