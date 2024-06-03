@@ -1,0 +1,26 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class HiddenParagraph {
+    @Test
+    public void FindHiddenParagraph() {
+
+        WebDriver znajdzUkryty = new ChromeDriver();
+        znajdzUkryty.get("https://testeroprogramowania.github.io/selenium/");
+
+        WebElement basicLink = znajdzUkryty.findElement(By.linkText("Podstawowa strona testowa"));
+        // System.out.println(basicLink.getText());
+        basicLink.click();
+
+        WebElement znajdzUkrytyElement = znajdzUkryty.findElement(By.cssSelector(".topSecret"));
+        System.out.println("By text: " + znajdzUkrytyElement.getText());
+        System.out.println("By attributeValue: " + znajdzUkrytyElement.getAttribute("value"));
+        System.out.println("By attributeTextContent: " + znajdzUkrytyElement.getAttribute("textContent"));
+
+    }
+}
