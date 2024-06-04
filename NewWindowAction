@@ -1,0 +1,38 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import java.util.Set;
+
+public class NoweOkno {
+    @Test
+    public void NewWindow() {
+
+        WebDriver actions = new ChromeDriver();
+        actions.get("https://testeroprogramowania.github.io/selenium/");
+
+        WebElement basicLink = actions.findElement(By.linkText("Podstawowa strona testowa"));
+        basicLink.click();
+        String currentWindow = actions.getWindowHandle();
+
+        actions.findElement(By.id("newPage")).click();
+        Set<String>windowNames = actions.getWindowHandles();
+        for (String window : windowNames) {
+            if (!window.equals(currentWindow)) {
+
+                actions.switchTo().window(window);
+            }
+
+        }
+        actions.findElement(By.cssSelector("#L2AGLb")).click();
+        actions.findElement(By.name("q")).sendKeys("Selenium");
+        actions.switchTo().window(currentWindow);
+        actions.findElement(By.name("fname")).sendKeys("Bartek");
+
+    }}
+
