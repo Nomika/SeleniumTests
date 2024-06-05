@@ -1,0 +1,21 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class iFrameActions {
+    @Test
+            public void iFrame(){
+    WebDriver actions = new ChromeDriver();
+        actions.get("https://testeroprogramowania.github.io/selenium/");
+
+        actions.findElement(By.linkText("Strona z iframe")).click();
+        actions.switchTo().frame(0);
+        actions.findElement(By.id("fname")).sendKeys("Marianna");
+        actions.switchTo().defaultContent();
+        System.out.println(actions.findElement(By.tagName("h1")).getText());
+}
+}
