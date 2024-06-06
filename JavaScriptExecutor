@@ -1,0 +1,30 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class JavaScriptExecutorTest {
+    private Object actions;
+
+    @Test
+    public void JavaSexecutor(){
+        WebDriver script = new ChromeDriver();
+
+        script.get("https://testeroprogramowania.github.io/selenium/");
+
+        WebElement basicLink = script.findElement(By.linkText("Podstawowa strona testowa"));
+
+        JavascriptExecutor executor = (JavascriptExecutor) script;
+        executor.executeScript("arguments[0].click()",basicLink);
+
+        WebElement imie = script.findElement(By.name("fname"));
+        executor.executeScript("arguments[0].setAttribute('value','Marian');",imie);
+
+        WebElement user = script.findElement(By.name("username"));
+        executor.executeScript("arguments[0].setAttribute('value','Mariusz');",user);
+    }
+}
