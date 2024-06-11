@@ -1,0 +1,18 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class UploadFile {
+    @Test
+    public void zrzucPlik() {
+
+        WebDriver zaciaganiePliku = new ChromeDriver();
+        zaciaganiePliku.get("https://testeroprogramowania.github.io/selenium/fileupload.html");
+
+        zaciaganiePliku.findElement(By.id("myFile")).sendKeys("C:\\Users\\Dell\\Desktop\\Front.pdf");
+    }
+}
