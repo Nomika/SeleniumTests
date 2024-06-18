@@ -1,0 +1,19 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class PageTitle {
+    @Test
+    public void Title(){
+        WebDriver URLtitle = new ChromeDriver();
+        URLtitle.get("https://testeroprogramowania.github.io/selenium/basics.html");
+        System.out.println(URLtitle.getCurrentUrl());
+        System.out.println(URLtitle.getTitle());
+
+
+    }
+}
