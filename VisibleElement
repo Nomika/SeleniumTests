@@ -1,0 +1,17 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class VisibleElement {
+    @Test
+    public void Visible() {
+        WebDriver visible = new ChromeDriver();
+        visible.get("https://testeroprogramowania.github.io/selenium/basics.html");
+
+        System.out.println(visible.findElement(By.tagName("p")).isDisplayed());
+        System.out.println(visible.findElement(By.tagName("button")).isDisplayed());
+    }
+}
