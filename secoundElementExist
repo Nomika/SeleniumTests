@@ -1,0 +1,39 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class elementExistTest {
+    WebDriver existTest;
+
+    @Test
+    public void ExistElement() {
+
+        existTest = new ChromeDriver();
+        existTest.get("https://testeroprogramowania.github.io/selenium/basics.html");
+
+//        System.out.println(elementExist(By.tagName("p")));
+//        System.out.println(elementExist(By.id("topSecret")));
+
+        System.out.println(secoundElementExist(By.tagName("p")));
+        System.out.println(secoundElementExist(By.id("topSecret")));
+    }
+
+//    public boolean elementExist(By locator){
+//        try {
+//            existTest.findElement(locator);
+//            return true;
+//        }
+//        catch(NoSuchElementException ex) {
+//            return false;
+//        }
+//    }
+    public boolean secoundElementExist(By locator) {
+       return existTest.findElements(locator).size() > 0;
+
+        }
+    }
+
