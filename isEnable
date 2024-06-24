@@ -1,0 +1,17 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class EnabledDisabled {
+    @Test
+    public void Enabled() {
+        WebDriver EnabledElement = new ChromeDriver();
+        EnabledElement.get("https://testeroprogramowania.github.io/selenium/basics.html");
+
+        System.out.println(EnabledElement.findElement(By.tagName("button")).isEnabled());
+        System.out.println(EnabledElement.findElement(By.tagName("input")).isEnabled());
+    }
+}
