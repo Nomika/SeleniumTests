@@ -1,0 +1,18 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class WaitTest {
+        @Test
+        public void testWait() throws InterruptedException {
+            WebDriver Wait = new ChromeDriver();
+            Wait.get("https://testeroprogramowania.github.io/selenium/wait2.html");
+
+            Wait.findElement(By.id("clickOnMe")).click();
+            Thread.sleep(5000);
+            Wait.findElement(By.cssSelector("p"));
+        }
+    }
