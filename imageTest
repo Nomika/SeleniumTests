@@ -1,0 +1,25 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class ImageTest {
+    @Test
+    public void JPG() {
+        WebDriver Image = new ChromeDriver();
+       // Image.get("https://testeroprogramowania.github.io/selenium/image.html");
+        Image.get("https://testeroprogramowania.github.io/selenium/basics.html");
+       // WebElement obrazek = Image.findElement(By.tagName("img"));
+        //System.out.println(obrazek.getAttribute("naturalHeight"));
+
+        WebElement obrazek1 = Image.findElement(By.tagName("img"));
+        String wysokosc = obrazek1.getAttribute("naturalHeight");
+
+        //Assert.assertEquals("223", wysokosc);
+        Assert.assertEquals(wysokosc,"0");
+    }
+}
