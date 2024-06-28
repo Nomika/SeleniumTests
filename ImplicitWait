@@ -1,0 +1,20 @@
+package ActionsOnEements;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
+
+public class ImplicitWait {
+    @Test
+    public void Implicit() throws InterruptedException {
+        WebDriver Wait = new ChromeDriver();
+        Wait.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Wait.get("https://testeroprogramowania.github.io/selenium/wait2.html");
+
+        Wait.findElement(By.id("clickOnMe")).click();
+        Wait.findElement(By.cssSelector("p"));
+    }
+}
